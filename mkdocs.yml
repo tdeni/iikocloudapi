@@ -1,0 +1,121 @@
+site_name: iikocloudapi
+site_description: Fully typed async Python client for the iikoCloud API
+site_url: https://tdeni.github.io/iikocloudapi/
+repo_url: https://github.com/tdeni/iikocloudapi
+repo_name: tdeni/iikocloudapi
+edit_uri: edit/master/docs/
+strict: true
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: [.]
+      check_paths: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [.]
+          inventories:
+            - https://docs.python.org/3/objects.inv
+            - https://docs.pydantic.dev/latest/objects.inv
+          options:
+            docstring_style: google
+            show_source: false
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            separate_signature: true
+            show_signature_annotations: true
+            merge_init_into_class: true
+            unwrap_annotated: false
+            members_order: source
+
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Guide:
+      - Authentication: guide/authentication.md
+      - Calling endpoints: guide/requests.md
+      - Responses and models: guide/responses.md
+      - Errors: guide/errors.md
+      - Asynchronous commands: guide/commands.md
+      - Webhooks: guide/webhooks.md
+  - Examples: examples.md
+  - Reference:
+      # reference:start
+      - Coverage: reference/index.md
+      - Client: reference/client.md
+      - Endpoints:
+          - General: reference/general.md
+          - Delivery: reference/delivery.md
+          - Orders: reference/orders.md
+          - Reserves: reference/reserves.md
+          - WebHooks: reference/webhooks.md
+          - Licenses: reference/licenses.md
+          - Loyalty and discounts: reference/loyalty-and-discounts.md
+          - Inventory: reference/inventory.md
+          - Finance: reference/finance.md
+          - Nomenclature: reference/nomenclature.md
+          - Employees: reference/employees.md
+          - Reports: reference/reports.md
+          - Terminals: reference/terminals.md
+          - Platform: reference/platform.md
+      - Models:
+          - Common: reference/models/common.md
+          - Delivery: reference/models/delivery.md
+          - Employees: reference/models/employees.md
+          - Finance: reference/models/finance.md
+          - General: reference/models/general.md
+          - Inventory: reference/models/inventory.md
+          - Licenses: reference/models/licenses.md
+          - Loyalty: reference/models/loyalty.md
+          - Nomenclature: reference/models/nomenclature.md
+          - Orders: reference/models/orders.md
+          - Platform: reference/models/platform.md
+          - Reports: reference/models/reports.md
+          - Reserves: reference/models/reserves.md
+          - Terminals: reference/models/terminals.md
+          - Webhooks: reference/models/webhooks.md
+    # reference:end
+  - Migrating from 0.4: migration.md
+  - Development: development.md
+  - Changelog: changelog.md

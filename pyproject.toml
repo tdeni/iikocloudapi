@@ -58,7 +58,7 @@ dev = [
   "ruff>=0.16.10",
 ]
 examples = [
-  "fastapi>=0.142.3",
+  "fastapi>=0.143.0",
 ]
 docs = [
   "mkdocs>=1.6.1,<2",
